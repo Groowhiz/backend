@@ -1,7 +1,6 @@
 class CreateProjects < ActiveRecord::Migration
   def self.up
     create_table :projects do |t|
-      t.integer :id, :auto_increment => true
       t.integer :user_id
       t.string :category
       t.string :title

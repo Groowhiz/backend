@@ -1,7 +1,6 @@
 class CreateProjectApplications < ActiveRecord::Migration
   def self.up
-    create_table :talents do |t|
-      t.integer :id, :auto_increment => true
+    create_table :project_applications  do |t|
       t.integer :project_id
       t.integer :user_id
       t.string :user_talent_link

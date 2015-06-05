@@ -1,7 +1,6 @@
 class CreateUserTalents < ActiveRecord::Migration
   def self.up
     create_table :user_talents do |t|
-      t.integer :id, :auto_increment => true
       t.integer :user_id
       t.integer :talent_id
       t.timestamps
