@@ -29,6 +29,7 @@ module Oxygen
     access_control.roles_for :any do |role|
       role.protect '/'
       role.allow   '/sessions'
+      role.project_module :artist, '/create_artist'
     end
 
     access_control.roles_for :admin do |role|
@@ -40,4 +41,37 @@ module Oxygen
     error(404) { @title = "Error 404"; render('errors/404', :layout => :error) }
     error(500) { @title = "Error 500"; render('errors/500', :layout => :error) }
   end
+
+  # class Users < Padrino::Application
+  #   register Padrino::Rendering
+  #   register Padrino::Mailer
+  #   register Padrino::Helpers
+  #   register Padrino::Cache
+  #   set :protection, :except => [:json_csrf]
+  #
+  #   # enable :sessions
+  #   enable :caching
+  #   enable  :sessions
+  #
+  #   set :logging, true
+  #   set :show_exceptions, false
+  #   set :dump_errors, false
+  #   # set :lock_ttl, 24 * 60 * 60
+  #
+  #   # set :is_production, DEPLOY_ENV == 'production'
+  #
+  #
+  #   configure do
+  #     # init_filters
+  #     # setup_authentication unless Padrino.env == :test
+  #     # setup_caching
+  #
+  #     #SupplyChain.urls.merge(CONFIG[SUPPLY_CHAIN_COMPANY]).each_pair do |k, v|
+  #     #  set k.to_sym, ENV[k] || v
+  #     #end
+  #
+  #     # Batch Size for No of Accruals that can be accumulated for Revenue Invoice Creation
+  #   end
+  #
+  # end
 end
