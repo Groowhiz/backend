@@ -30,6 +30,7 @@ module OxygenService
     access_control.roles_for :any do |role|
       role.protect '/'
       role.allow   '/sessions'
+      role.project_module :artist, '/create_artist'
     end
 
     access_control.roles_for :admin do |role|
