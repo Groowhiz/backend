@@ -8,6 +8,7 @@ class CreateAccounts < ActiveRecord::Migration
       t.string :crypted_password
       t.string :role
       t.string :location
+      t.string :display_image
       t.string :sex
       t.timestamps
     end
